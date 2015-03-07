@@ -24,5 +24,7 @@
         <mapping class="model.Usuario"/>
         <mapping class="model.email"/>
         <mapping class="model.tarea"/>
+        <mapping class="model.estado"/>
+        <mapping class="model.telefono"/>
   </session-factory>
 </hibernate-configuration>

@@ -6,7 +6,8 @@
 package model.daos;
 
 import controler.NewHibernateUtil;
-import model.Alumno;
+import model.Direcion;
+import model.estado;
 import org.hibernate.HibernateError;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -15,14 +16,13 @@ import org.hibernate.Transaction;
  *
  * @author Mariana
  */
-public class AlumnoDAO {
-    public void create(Alumno a) throws Exception{
-        Session session =NewHibernateUtil.getSessionFactory().openSession();
+public class estadoDAO {
+    public void create(estado es) throws Exception{
+        Session session =NewHibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.getTransaction();
         try{
             tx.begin();
-            session.persist(a);
-            //session.save(a);
+            session.save(es);
             tx.commit();
         }catch(HibernateError he){
             if(tx != null && tx.isActive())

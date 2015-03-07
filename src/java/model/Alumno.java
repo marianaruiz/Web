@@ -5,11 +5,16 @@
  */
 package model;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 
@@ -19,22 +24,28 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import model.daos.AlumnoDAO;
 /**
  *
  * @author Mariana
  */
 @Entity
 @Table (name = "Alumno")
-public class Alumno{
+public class Alumno implements Serializable{
     @Id
     private String Boleta;
+    private String contrasena;
     private String nombre;
     private String paterno;
     private String materno;
+    @Embedded
+    private telefono tel;
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private Direcion dir;
     @OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY )
     private List<email> emails =new ArrayList<email>();
+    @Embedded
+    private estado estado;
     @Temporal(TemporalType.DATE)
     private Date fechaIngreso;
     @Temporal(TemporalType.TIME)
@@ -108,5 +119,59 @@ public class Alumno{
     public void setFechaHoradeIngreso(Time fechaHoradeIngreso) {
         this.fechaHoradeIngreso = fechaHoradeIngreso;
     }
-        
+
+    public String getContrasena() {
+        return contrasena;
+    }
+
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
+    }
+
+    public telefono getTel() {
+        return tel;
+    }
+
+    public void setTel(telefono tel) {
+        this.tel = tel;
+    }
+
+    public estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(estado estado) {
+        this.estado = estado;
+    }
+    public static void main(String[] args) throws Exception {
+		// TODO Auto-generated method stub
+        Alumno a= new Alumno();
+        a.Boleta="2012630403";
+        a.contrasena="123";
+        a.nombre="m";
+        a.paterno="r";
+        a.materno="e";
+        Direcion d=new Direcion();
+        d.setCalle("uncalle");
+        d.setColnia("unacolonia");
+        d.setCiudad("ciudad");
+        d.setDelegacion("del");
+        a.dir=d;
+        email email=new email();
+        email.setMail("uncorreo@gmail.com");
+        List<email> listamail=new ArrayList();
+        //listamail.add(email);
+        //listamail.add(email);
+        //a.emails=listamail;
+        //estado es=new estado();
+        //es.setEstadoDes("activo");
+        //a.estado=es;
+        Date da = Date.valueOf(LocalDate.MIN);
+        Time t = Time.valueOf(LocalTime.MIN);
+        a.fechaHoradeIngreso=t; 
+        a.fechaIngreso=da;
+        AlumnoDAO adao=new AlumnoDAO();
+        adao.create(a);
+        System.out.println(a);
+    }    
 }

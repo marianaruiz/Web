@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package model;
-
+import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +17,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table (name = "email")
-public class email {
+public class email implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String idemail;

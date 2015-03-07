@@ -28,11 +28,7 @@ public class NewHibernateUtil {
 	            configuration.configure();
 	            //apply configuration property settings to StandardServiceRegistryBuilder
 	            ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
-	             
-	            sessionFactory = configuration
-	                                .buildSessionFactory(serviceRegistry);
-	             
-	            
+	            sessionFactory = configuration.buildSessionFactory(serviceRegistry);
 	        }
 	        catch (Throwable ex) {
 	            // Make sure you log the exception, as it might be swallowed

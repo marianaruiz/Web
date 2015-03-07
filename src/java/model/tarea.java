@@ -4,11 +4,41 @@
  * and open the template in the editor.
  */
 package model;
-
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 /**
  *
  * @author Mariana
  */
-public class tarea {
+@Entity
+@Table (name = "tarea")
+public class tarea implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private String idTarea;
+    private String descripcion;
+
+    public tarea() {
+    }
+
+    public String getIdTarea() {
+        return idTarea;
+    }
+
+    public void setIdTarea(String idTarea) {
+        this.idTarea = idTarea;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
     
 }
