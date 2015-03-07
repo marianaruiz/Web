@@ -6,7 +6,6 @@
 package model.daos;
 
 import controler.NewHibernateUtil;
-import model.Direcion;
 import model.estado;
 import org.hibernate.HibernateError;
 import org.hibernate.Session;

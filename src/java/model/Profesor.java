@@ -34,7 +34,7 @@ public class Profesor implements  Serializable{
     private String paterno;
     private String materno;
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
-    private Direcion dir;
+    private Direccion dir;
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private telefono tel;
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
@@ -82,11 +82,11 @@ public class Profesor implements  Serializable{
         this.materno = materno;
     }
 
-    public Direcion getDir() {
+    public Direccion getDir() {
         return dir;
     }
 
-    public void setDir(Direcion dir) {
+    public void setDir(Direccion dir) {
         this.dir = dir;
     }
 

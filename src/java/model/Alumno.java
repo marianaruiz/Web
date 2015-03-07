@@ -41,7 +41,7 @@ public class Alumno implements Serializable{
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private telefono tel;
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
-    private Direcion dir;
+    private Direccion dir;
     @OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY )
     private List<email> emails =new ArrayList<email>();
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
@@ -88,11 +88,11 @@ public class Alumno implements Serializable{
         this.materno = materno;
     }
 
-    public Direcion getDir() {
+    public Direccion getDir() {
         return dir;
     }
 
-    public void setDir(Direcion dir) {
+    public void setDir(Direccion dir) {
         this.dir = dir;
     }
 
@@ -143,7 +143,7 @@ public class Alumno implements Serializable{
         a.nombre="m";
         a.paterno="r";
         a.materno="e";
-        Direcion d=new Direcion();
+        Direccion d=new Direccion();
         d.setCalle("uncalle");
         d.setColonia("unacolonia");
         d.setCiudad("ciudad");

@@ -6,7 +6,7 @@
 package model.daos;
 
 import controler.NewHibernateUtil;
-import model.Direcion;
+import model.Direccion;
 import org.hibernate.HibernateError;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -16,7 +16,7 @@ import org.hibernate.Transaction;
  * @author Mariana
  */
 public class DireccionDAO {
-    public void create(Direcion d) throws Exception{
+    public void create(Direccion d) throws Exception{
         Session session =NewHibernateUtil.getSessionFactory().getCurrentSession();
         Transaction tx = session.getTransaction();
         try{

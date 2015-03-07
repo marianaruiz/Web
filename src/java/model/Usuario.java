@@ -35,7 +35,7 @@ public class Usuario implements Serializable{
     private String paterno;
     private String materno;
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
-    private Direcion direccion;
+    private Direccion direccion;
     private String rol;
     //@Temporal(TemporalType.DATE)
     private Date fechaIngreso;
@@ -93,11 +93,11 @@ public class Usuario implements Serializable{
         this.materno = materno;
     }
 
-    public Direcion getDireccion() {
+    public Direccion getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(Direcion direccion) {
+    public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
 
