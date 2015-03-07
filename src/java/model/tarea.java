@@ -19,17 +19,17 @@ import javax.persistence.Table;
 public class tarea implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String idTarea;
+    private int idTarea;
     private String descripcion;
 
     public tarea() {
     }
 
-    public String getIdTarea() {
+    public int getIdTarea() {
         return idTarea;
     }
 
-    public void setIdTarea(String idTarea) {
+    public void setIdTarea(int idTarea) {
         this.idTarea = idTarea;
     }
 

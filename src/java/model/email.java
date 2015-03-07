@@ -20,15 +20,15 @@ import javax.persistence.Table;
 public class email implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String idemail;
+    private int idemail;
     private String mail;
     public void email(){
     }
-    public String getIdemail() {
+    public int getIdemail() {
         return idemail;
     }
 
-    public void setIdemail(String idemail) {
+    public void setIdemail(int idemail) {
         this.idemail = idemail;
     }
 
