@@ -153,7 +153,7 @@ public class Alumno implements Serializable{
         a.materno="e";
         Direcion d=new Direcion();
         d.setCalle("uncalle");
-        d.setColnia("unacolonia");
+        d.setColonia("unacolonia");
         d.setCiudad("ciudad");
         d.setDelegacion("del");
         a.dir=d;
