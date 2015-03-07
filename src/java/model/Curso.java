@@ -25,9 +25,9 @@ public class Curso implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCurso;
-    @Temporal(TemporalType.DATE)
+    //@Temporal(TemporalType.DATE)
     private Date fechaInicio;
-    @Temporal(TemporalType.DATE)
+    //@Temporal(TemporalType.DATE)
     private Date fechaTermino;
     private String Hubicacion;
     private float precio;

@@ -35,17 +35,17 @@ public class Profesor implements  Serializable{
     private String materno;
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private Direcion dir;
-    @Embedded
+    @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private telefono tel;
-    @Embedded
+    @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private estado estado;
     @OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY )
     private List<email> emails =new ArrayList<email>();
     
-    @Temporal(TemporalType.DATE)
+    //@Temporal(TemporalType.DATE)
     private Date fechaIngreso;
-    @Temporal(TemporalType.TIME)
-    private Time fechaHoradeIngreso;
+    //@Temporal(TemporalType.TIME)
+    //private Time fechaHoradeIngreso;
     
     public Profesor() {
     }
@@ -113,7 +113,7 @@ public class Profesor implements  Serializable{
     public void setFechaIngreso(Date fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
-
+/*
     public Time getFechaHoradeIngreso() {
         return fechaHoradeIngreso;
     }
@@ -121,7 +121,7 @@ public class Profesor implements  Serializable{
     public void setFechaHoradeIngreso(Time fechaHoradeIngreso) {
         this.fechaHoradeIngreso = fechaHoradeIngreso;
     }
-
+*/
     public String getContrasena() {
         return contrasena;
     }

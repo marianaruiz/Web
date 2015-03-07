@@ -38,18 +38,18 @@ public class Alumno implements Serializable{
     private String nombre;
     private String paterno;
     private String materno;
-    @Embedded
+    @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private telefono tel;
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private Direcion dir;
     @OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY )
     private List<email> emails =new ArrayList<email>();
-    @Embedded
+    @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private estado estado;
-    @Temporal(TemporalType.DATE)
+    //@Temporal(TemporalType.DATE)
     private Date fechaIngreso;
-    @Temporal(TemporalType.TIME)
-    private Time fechaHoradeIngreso;
+    //@Temporal(TemporalType.TIME)
+    //private Time fechaHoradeIngreso;
     //private Date fechaIngreso;
     //private Hour horaDeIngreso;
 
@@ -112,14 +112,6 @@ public class Alumno implements Serializable{
         this.fechaIngreso = fechaIngreso;
     }
 
-    public Time getFechaHoradeIngreso() {
-        return fechaHoradeIngreso;
-    }
-
-    public void setFechaHoradeIngreso(Time fechaHoradeIngreso) {
-        this.fechaHoradeIngreso = fechaHoradeIngreso;
-    }
-
     public String getContrasena() {
         return contrasena;
     }
@@ -160,16 +152,16 @@ public class Alumno implements Serializable{
         email email=new email();
         email.setMail("uncorreo@gmail.com");
         List<email> listamail=new ArrayList();
+        listamail.add(email);
         //listamail.add(email);
-        //listamail.add(email);
-        //a.emails=listamail;
-        //estado es=new estado();
-        //es.setEstadoDes("activo");
-        //a.estado=es;
+        a.emails=listamail;
+        estado es=new estado();
+        es.setEstadoDes("activo");
+        a.estado=es;
         Date da = Date.valueOf(LocalDate.MIN);
         Time t = Time.valueOf(LocalTime.MIN);
-        a.fechaHoradeIngreso=t; 
-        a.fechaIngreso=da;
+       // a.fechaHoradeIngreso=t; 
+        //a.fechaIngreso=da;
         AlumnoDAO adao=new AlumnoDAO();
         adao.create(a);
         System.out.println(a);
