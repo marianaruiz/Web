@@ -6,7 +6,8 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Time;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -16,6 +17,7 @@ import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+
 import javax.persistence.Table;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -36,16 +38,18 @@ public class Alumno implements Serializable{
     private String nombre;
     private String paterno;
     private String materno;
-    @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
+    @Embedded
     private telefono tel;
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private Direcion dir;
     @OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY )
     private List<email> emails =new ArrayList<email>();
-    @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
+    @Embedded
     private estado estado;
-   // @Temporal(TemporalType.DATE)
-    //private Date fechaIngreso;
+    @Temporal(TemporalType.DATE)
+    private Date fechaIngreso;
+    @Temporal(TemporalType.TIME)
+    private Time fechaHoradeIngreso;
     //private Date fechaIngreso;
     //private Hour horaDeIngreso;
 
@@ -100,14 +104,22 @@ public class Alumno implements Serializable{
         this.emails = emails;
     }
 
-   /* public Date getFechaIngreso() {
+    public Date getFechaIngreso() {
         return fechaIngreso;
     }
 
     public void setFechaIngreso(Date fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
-*/
+
+    public Time getFechaHoradeIngreso() {
+        return fechaHoradeIngreso;
+    }
+
+    public void setFechaHoradeIngreso(Time fechaHoradeIngreso) {
+        this.fechaHoradeIngreso = fechaHoradeIngreso;
+    }
+
     public String getContrasena() {
         return contrasena;
     }
@@ -148,14 +160,16 @@ public class Alumno implements Serializable{
         email email=new email();
         email.setMail("uncorreo@gmail.com");
         List<email> listamail=new ArrayList();
-        listamail.add(email);
         //listamail.add(email);
-        a.emails=listamail;
-        estado es=new estado();
-        es.setEstadoDes("activo");
-        a.estado=es;
-        //Date da = Date.from(Instant.EPOCH);
-       // a.fechaIngreso=da;
+        //listamail.add(email);
+        //a.emails=listamail;
+        //estado es=new estado();
+        //es.setEstadoDes("activo");
+        //a.estado=es;
+        Date da = Date.valueOf(LocalDate.MIN);
+        Time t = Time.valueOf(LocalTime.MIN);
+        a.fechaHoradeIngreso=t; 
+        a.fechaIngreso=da;
         AlumnoDAO adao=new AlumnoDAO();
         adao.create(a);
         System.out.println(a);

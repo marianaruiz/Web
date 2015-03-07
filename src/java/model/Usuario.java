@@ -6,15 +6,13 @@
 package model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.sql.Time;
-import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -34,12 +32,12 @@ public class Usuario implements Serializable{
     private String nombre;
     private String paterno;
     private String materno;
-    @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
+    @Embedded
     private Direcion direccion;
     private String rol;
     @Temporal(TemporalType.DATE)
     private Date fechaIngreso;
-    //@Temporal(TemporalType.TIME)
+    @Temporal(TemporalType.TIME)
     private Time fechaHoradeIngreso;
 
     public Usuario() {

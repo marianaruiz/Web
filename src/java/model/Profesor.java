@@ -5,7 +5,7 @@
  */
 package model;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
@@ -35,15 +35,16 @@ public class Profesor implements  Serializable{
     private String materno;
     @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
     private Direcion dir;
-    @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
+    @Embedded
     private telefono tel;
-    @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
+    @Embedded
     private estado estado;
     @OneToMany(cascade = CascadeType.ALL ,fetch = FetchType.LAZY )
     private List<email> emails =new ArrayList<email>();
     
     @Temporal(TemporalType.DATE)
     private Date fechaIngreso;
+    @Temporal(TemporalType.TIME)
     private Time fechaHoradeIngreso;
     
     public Profesor() {
