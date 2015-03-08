@@ -7,6 +7,8 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="UsuarioForm" type="model.from.UsuarioForm"/>
+        <form-bean name="ProfesorFrom" type="model.from.ProfesorFrom"/>
         <form-bean name="AlumnoFromBean" type="model.from.AlumnoFromBean"/>
     
     </form-beans>
@@ -20,6 +22,8 @@
     </global-forwards>
 
     <action-mappings>
+        <action input="/" name="ProfesorFrom" path="/crearUsuario" scope="session" type="controler.NuevoUsuario"/>
+        <action input="/" name="ProfesorFrom" path="/crearProfesor" scope="session" type="controler.NuevoProfesor"/>
         <action input="/" name="AlumnoFromBean" path="/crearAlumno" scope="session" type="controler.NuevoAlumno"/>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>

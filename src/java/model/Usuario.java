@@ -33,10 +33,18 @@ public class Usuario implements Serializable{
     private String clave;
     private String nombre;
     private String paterno;
+    private String email;
     private String materno;
-    @OneToOne(cascade ={CascadeType.PERSIST, CascadeType.REMOVE})
-    private Direccion direccion;
     private String rol;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    
     //@Temporal(TemporalType.DATE)
     private Date fechaIngreso;
     
@@ -90,14 +98,6 @@ public class Usuario implements Serializable{
 
     public void setMaterno(String materno) {
         this.materno = materno;
-    }
-
-    public Direccion getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
     }
 
     public String getRol() {

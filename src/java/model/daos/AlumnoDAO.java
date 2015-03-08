@@ -27,6 +27,7 @@ public class AlumnoDAO {
             session.persist(a);
             //session.save(a);
             tx.commit();
+            
             session.close();
         }catch(HibernateError he){
             if(tx != null && tx.isActive())
