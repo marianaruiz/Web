@@ -7,6 +7,7 @@
 
 <struts-config>
     <form-beans>
+        <form-bean name="AlumnoFromBean" type="model.from.AlumnoFromBean"/>
     
     </form-beans>
     
@@ -19,6 +20,7 @@
     </global-forwards>
 
     <action-mappings>
+        <action input="/" name="AlumnoFromBean" path="/crearAlumno" scope="session" type="controler.NuevoAlumno"/>
         <action path="/Welcome" forward="/welcomeStruts.jsp"/>
     </action-mappings>
     
