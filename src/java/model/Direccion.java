@@ -33,6 +33,16 @@ public class Direccion implements Serializable {
     public Direccion() {
     }
 
+    public Direccion(String calle, String noExt, String noInt, String colonia, String CP, String delegacion, String ciudad) {
+        this.calle = calle;
+        this.noExt = noExt;
+        this.noInt = noInt;
+        this.colonia = colonia;
+        this.CP = CP;
+        this.delegacion = delegacion;
+        this.ciudad = ciudad;
+    }
+    
     public int getIddirecion() {
         return iddirecion;
     }

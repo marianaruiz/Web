@@ -31,7 +31,97 @@ public class AlumnoFromBean extends org.apache.struts.action.ActionForm {
     private String paterno;
     private String materno;
     private String email;
+    private String calle;
+    private String noExt;
+    private String noInt;
+    private String col;
+    private String cp;
+    private String del;
+    private String estado;
+    private String telpar;
+    private String telCasa;
+    private String telcel;
 
+    public String getCalle() {
+        return calle;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public String getNoExt() {
+        return noExt;
+    }
+
+    public void setNoExt(String noExt) {
+        this.noExt = noExt;
+    }
+
+    public String getNoInt() {
+        return noInt;
+    }
+
+    public void setNoInt(String noInt) {
+        this.noInt = noInt;
+    }
+
+    public String getCol() {
+        return col;
+    }
+
+    public void setCol(String col) {
+        this.col = col;
+    }
+
+    public String getCp() {
+        return cp;
+    }
+
+    public void setCp(String cp) {
+        this.cp = cp;
+    }
+
+    public String getDel() {
+        return del;
+    }
+
+    public void setDel(String del) {
+        this.del = del;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getTelpar() {
+        return telpar;
+    }
+
+    public void setTelpar(String telpar) {
+        this.telpar = telpar;
+    }
+
+    public String getTelCasa() {
+        return telCasa;
+    }
+
+    public void setTelCasa(String telCasa) {
+        this.telCasa = telCasa;
+    }
+
+    public String getTelcel() {
+        return telcel;
+    }
+
+    public void setTelcel(String telcel) {
+        this.telcel = telcel;
+    }
+    
     public String getEmail() {
         return email;
     }

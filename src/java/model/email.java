@@ -24,6 +24,11 @@ public class email implements Serializable {
     private String mail;
     public void email(){
     }
+
+    public email(String mail) {
+        this.mail = mail;
+    }
+    
     public int getIdemail() {
         return idemail;
     }

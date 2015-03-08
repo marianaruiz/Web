@@ -27,6 +27,14 @@ public class telefono implements Serializable{
     private String telefonoCelular;
     
     public void telefono(){}
+
+    public telefono(String telefonoParticular, String telefonoOficina, String telefonoCelular) {
+        this.telefonoParticular = telefonoParticular;
+        this.telefonoOficina = telefonoOficina;
+        this.telefonoCelular = telefonoCelular;
+    }
+    
+    
     public int getIdtelefono() {
         return idtelefono;
     }

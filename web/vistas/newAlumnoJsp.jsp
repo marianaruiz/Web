@@ -73,7 +73,7 @@
                   <table>
                       <tr>
                             <td>No.Boleta</td>
-                            <td><html:password property="boleta" styleClass="form-control"/></td>
+                            <td><html:text property="boleta" styleClass="form-control"/></td>
                       </tr>
                       <tr>
                           <td>Nombre</td>
@@ -88,16 +88,56 @@
                           <td><html:text property="materno" styleClass="form-control" /></td>
                       </tr>
                       <tr>
-                          <td>Correo ElectronicoCorreo Electronico</td>
+                          <td>Correo Electronico</td>
                           <td><html:text property="email" styleClass="form-control" /></td>
                       </tr>
                       <tr>
-                          <td></td>
+                          <td>Direcion</td>
                           <td></td>
                       </tr>
                       <tr>
+                          <td>Calle</td>
+                          <td><html:text property="calle" styleClass="form-control" /></td>
+                      </tr>
+                      <tr>
+                          <td>NO.Exterior</td>
+                          <td><html:text property="noExt" styleClass="form-control" /></td>
+                      </tr>
+                      <tr>
+                          <td>No.Interior</td>
+                          <td><html:text property="noInt" styleClass="form-conrol" /></td>
+                      </tr>
+                      <tr>
+                          <td>Colonia</td>
+                          <td><html:text property="col" styleClass="form-conrol" /></td>
+                      </tr>
+                      <tr>
+                          <td>Codigo Postal</td>
+                          <td><html:text property="cp" styleClass="form-conrol" /></td>
+                      </tr>
+                      <tr>
+                          <td>Municipio/Delegacion</td>
+                          <td><html:text property="del" styleClass="form-conrol" /></td>
+                      </tr>
+                      <tr>
+                          <td>Estado</td>
+                          <td><html:text property="estado" styleClass="form-conrol" /></td>
+                      </tr>
+                      <tr>
+                          <td>Telefono Particularr</td>
+                          <td><html:text property="telpar" styleClass="form-conrol" /></td>
+                      </tr>
+                      <tr>
+                          <td>Telefono Particularrr</td>
+                          <td><html:text property="telCasa" styleClass="form-conrol" /></td>
+                      </tr>
+                      <tr>
+                          <td>Telefono Celular</td>
+                          <td><html:text property="telcel" styleClass="form-conrol" /></td>
+                      </tr>
+                      <tr>
                           <td><html:submit value="cancelar" styleClass="btn btn-lg btn-success"/></td>
-                          <td><html:submit value="crear" styleClass="btn btn-lg btn-success"/></td>
+                          
                       </tr>
                   </table>
             </fieldset>
