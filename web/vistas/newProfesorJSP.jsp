@@ -69,7 +69,7 @@
         <div class="jumbotron boxlogin">
             <html:form action="/crearProfesor" >   
                 <fieldset>
-                  <legend class="form-signin-heading">Datos del Alumno</legend>
+                  <legend class="form-signin-heading">Datos del Profesor</legend>
                   <table>
                       <tr>
                             <td>RFC</td>

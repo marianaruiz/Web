@@ -100,4 +100,22 @@ public class AlumnoDAO {
         }
         return l;
     }
+    public Alumno login(String Bol,String cont) throws Exception{
+        Session session = NewHibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.getTransaction();
+         Alumno Alum = null;
+        try{
+            tx.begin();
+            Query q = session.createSQLQuery("select * from alumno where alumno.Boleta=:Bol and alumno.contrasena =:cont").addEntity(Alumno.class)
+            .setParameter("cont",cont).setParameter("Bol", Bol);
+             Alum = (Alumno) q.uniqueResult();
+            tx.commit();
+        }catch(HibernateError he){
+            if(tx != null && tx.isActive())
+                tx.rollback();
+            System.out.println("Se ha cerrado la transaccion");
+        }
+       
+        return Alum;
+    }
 }

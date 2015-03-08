@@ -5,10 +5,14 @@
  */
 package model;
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 /**
  *
@@ -21,6 +25,16 @@ public class tarea implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTarea;
     private String descripcion;
+    @OneToOne(cascade = CascadeType.ALL ,fetch = FetchType.LAZY )
+    private Curso cur;
+
+    public Curso getCur() {
+        return cur;
+    }
+
+    public void setCur(Curso cur) {
+        this.cur = cur;
+    }
     
     public tarea() {
     }

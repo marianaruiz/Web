@@ -3,7 +3,6 @@
     Created on : 7/03/2015, 06:29:56 PM
     Author     : Mariana
 --%>
-<%@page import="java.util.ResourceBundle"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>

@@ -102,4 +102,21 @@ public class ProfesorDAO {
         }
         return l;
     }
+    public Profesor login(String Bol,String cont) throws Exception{
+        Session session =NewHibernateUtil.getSessionFactory().getCurrentSession();
+        Transaction tx = session.getTransaction();
+         Profesor prof= null;
+        try{
+            tx.begin();
+            Query q = session.createSQLQuery("select * from profesor where profesor.RFC=:RFC and profesor.contrasena =:cont").addEntity(Profesor.class)
+            .setParameter("cont",cont).setParameter("RFC", Bol);
+            prof = (Profesor) q.uniqueResult();
+            tx.commit();
+        }catch(HibernateError he){
+            if(tx != null && tx.isActive())
+                tx.rollback();
+            System.out.println("Se ha cerrado la transaccion");
+        }
+        return prof;
+    }
 }

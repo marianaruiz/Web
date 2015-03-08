@@ -23,6 +23,8 @@ public class estado {
     private int idestado;
     private String estadoDes;
 
+    public estado() {
+    }
     public int getIdestado() {
         return idestado;
     }

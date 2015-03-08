@@ -7,10 +7,15 @@ package model;
 
 import java.io.Serializable;
 import java.sql.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -31,8 +36,18 @@ public class Curso implements Serializable{
     private Date fechaTermino;
     private String Hubicacion;
     private float precio;
+    @OneToOne(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
+    private Profesor prof;
+
+    public Profesor getProf() {
+        return prof;
+    }
+
+    public void setProf(Profesor prof) {
+        this.prof = prof;
+    }
     
-    public void Curso(){
+    public Curso(){
     }
     public int getIdCurso() {
         return idCurso;

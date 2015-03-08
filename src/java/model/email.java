@@ -22,7 +22,7 @@ public class email implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idemail;
     private String mail;
-    public void email(){
+    public email(){
     }
 
     public email(String mail) {

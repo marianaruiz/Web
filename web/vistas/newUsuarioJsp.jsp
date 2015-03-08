@@ -68,11 +68,15 @@
         <div class="jumbotron boxlogin">
             <html:form action="/crearUsuario" >   
                 <fieldset>
-                  <legend class="form-signin-heading">Datos del Alumno</legend>
+                  <legend class="form-signin-heading">Datos del Usuario</legend>
                   <table>
                       <tr>
                             <td>NomredeUsuario</td>
                             <td><html:text property="nombreUsuario" styleClass="form-control"/></td>
+                      </tr>
+                      <tr>
+                          <td>Clave</td>
+                          <td><html:text property="clave" styleClass="form-control" /></td>
                       </tr>
                       <tr>
                           <td>Nombre</td>
@@ -91,8 +95,8 @@
                           <td><html:text property="email" styleClass="form-control" /></td>
                       </tr>
                       <tr>
-                          <td>Correo Ellectronico </td>
-                          <td><html:select property="tipoUsuario">
+                          <td>Tipo de Usuario</td>
+                          <td><html:select property="rol">
                                 <html:option value="A"/>
                                 <html:option value="L"/>                
                                 </html:select></td>
