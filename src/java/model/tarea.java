@@ -21,7 +21,7 @@ public class tarea implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idTarea;
     private String descripcion;
-
+    
     public tarea() {
     }
 

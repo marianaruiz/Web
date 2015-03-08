@@ -40,7 +40,6 @@ public class Usuario implements Serializable{
     //@Temporal(TemporalType.DATE)
     private Date fechaIngreso;
     
-
     public Usuario() {
     }
     

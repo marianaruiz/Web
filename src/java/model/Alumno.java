@@ -135,7 +135,7 @@ public class Alumno implements Serializable{
     public void setEstado(estado estado) {
         this.estado = estado;
     }
-    public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
 		// TODO Auto-generated method stub
         Alumno a= new Alumno();
         a.Boleta="2012630403";
@@ -164,6 +164,9 @@ public class Alumno implements Serializable{
         //a.fechaIngreso=da;
         AlumnoDAO adao=new AlumnoDAO();
         adao.create(a);
+        a.nombre="mariana";
+        adao.update(a);
+        System.out.println(adao.loadAll());
         System.out.println(a);
-    }    
+    }   */ 
 }

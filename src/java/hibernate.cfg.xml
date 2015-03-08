@@ -19,7 +19,7 @@
         <!--Mappeo de entidades (anontaciones)-->
         <mapping class="model.Alumno"/>
         <mapping class="model.Curso"/>
-        <mapping class="model.Direcion"/>
+        <mapping class="model.Direccion"/>
         <mapping class="model.Profesor"/>
         <mapping class="model.Usuario"/>
         <mapping class="model.email"/>
