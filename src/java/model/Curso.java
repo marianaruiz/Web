@@ -30,6 +30,7 @@ public class Curso implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idCurso;
+    private String NombreCurso;
     //@Temporal(TemporalType.DATE)
     private Date fechaInicio;
     //@Temporal(TemporalType.DATE)
@@ -39,6 +40,15 @@ public class Curso implements Serializable{
     @OneToOne(cascade = CascadeType.ALL ,fetch = FetchType.LAZY)
     private Profesor prof;
 
+    public String getNombreCurso() {
+        return NombreCurso;
+    }
+
+    public void setNombreCurso(String NombreCurso) {
+        this.NombreCurso = NombreCurso;
+    }
+    
+    
     public Profesor getProf() {
         return prof;
     }
